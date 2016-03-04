@@ -1,6 +1,6 @@
 {
-  "name": "retext-keywords",
-  "main": "retext-keywords.js",
+  "name": "retext-overuse",
+  "main": "retext-overuse.js",
   "description": "Keyword extraction with Retext",
   "license": "MIT",
   "keywords": [
@@ -13,10 +13,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wooorm/retext-keywords.git"
+    "url": "https://github.com/dunckr/retext-overuse.git"
   },
   "authors": [
-    "Titus Wormer <tituswormer@gmail.com>"
+    "Duncan Beaton <dunckr@gmail.com>"
   ],
   "ignore": [
     ".*",

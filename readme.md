@@ -1,27 +1,27 @@
-# retext-keywords [![Build Status](https://img.shields.io/travis/wooorm/retext-keywords.svg)](https://travis-ci.org/wooorm/retext-keywords) [![Coverage Status](https://img.shields.io/codecov/c/github/wooorm/retext-keywords.svg)](https://codecov.io/github/wooorm/retext-keywords)
+# retext-overuse [![Build Status](https://img.shields.io/travis/dunckr/retext-overuse.svg)](https://travis-ci.org/dunckr/retext-overuse) [![Coverage Status](https://img.shields.io/codecov/c/github/dunckr/retext-overuse.svg)](https://codecov.io/github/dunckr/retext-overuse)
 
-Keyword extraction with [**retext**](https://github.com/wooorm/retext).
+Keyword extraction with [**retext**](https://github.com/dunckr/retext).
 
 ## Installation
 
 [npm](https://docs.npmjs.com/cli/install):
 
 ```bash
-npm install retext-keywords
+npm install retext-overuse
 ```
 
-**retext-keywords** is also available for [bower](http://bower.io/#install-packages),
+**retext-overuse** is also available for [bower](http://bower.io/#install-packages),
 [component](https://github.com/componentjs/component), and
 [duo](http://duojs.org/#getting-started), and as an AMD, CommonJS, and globals
-module, [uncompressed](retext-keywords.js) and
-[compressed](retext-keywords.min.js).
+module, [uncompressed](retext-overuse.js) and
+[compressed](retext-overuse.min.js).
 
 ## Usage
 
 ```javascript
 var retext = require('retext');
 var nlcstToString = require('nlcst-to-string');
-var keywords = require('retext-keywords');
+var keywords = require('retext-overuse');
 
 retext().use(keywords).process(
     /* First three paragraphs on Term Extraction from Wikipedia:
@@ -100,7 +100,7 @@ communities
 
 ## API
 
-### [retext](https://github.com/wooorm/retext#api)\.[use](https://github.com/wooorm/retext#retextuseplugin-options)([keywords](#api)\[, options\])
+### [retext](https://github.com/dunckr/retext#api)\.[use](https://github.com/dunckr/retext#retextuseplugin-options)([keywords](#api)\[, options\])
 
 Extract keywords and key-phrases from the document.
 
@@ -151,4 +151,4 @@ A single keyword looks as follows:
 
 ## License
 
-[MIT](LICENSE) © [Titus Wormer](http://wooorm.com)
+[MIT](LICENSE) © [Duncan Beaton](http://dunckr.com)

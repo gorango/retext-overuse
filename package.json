@@ -1,5 +1,5 @@
 {
-  "name": "retext-keywords",
+  "name": "retext-overuse",
   "version": "1.0.1",
   "description": "Keyword extraction with Retext",
   "license": "MIT",
@@ -22,9 +22,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wooorm/retext-keywords.git"
+    "url": "https://github.com/dunckr/retext-overuse.git"
   },
-  "author": "Titus Wormer <tituswormer@gmail.com>",
+  "author": "Duncan Beaton <dunckr@gmail.com>",
   "devDependencies": {
     "browserify": "^11.0.1",
     "chalk": "^1.0.0",
@@ -51,8 +51,8 @@
     "lint-style": "jscs --reporter inline .",
     "lint": "npm run lint-api && npm run lint-style",
     "make": "npm run lint && npm run test-coverage",
-    "build-bundle": "browserify index.js --ignore-missing --no-builtins --standalone retextPOS > retext-keywords.js",
-    "postbuild-bundle": "esmangle retext-keywords.js > retext-keywords.min.js",
+    "build-bundle": "browserify index.js --ignore-missing --no-builtins --standalone retextPOS > retext-overuse.js",
+    "postbuild-bundle": "esmangle retext-overuse.js > retext-overuse.min.js",
     "build-md": "mdast . --quiet",
     "build": "npm run build-bundle && npm run build-md"
   }

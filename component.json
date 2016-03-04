@@ -1,5 +1,5 @@
 {
-  "name": "retext-keywords",
+  "name": "retext-overuse",
   "version": "1.0.1",
   "description": "Keyword extraction with Retext",
   "license": "MIT",
@@ -12,12 +12,12 @@
     "retext"
   ],
   "dependencies": {
-    "wooorm/retext-pos": "^1.0.0",
-    "wooorm/stemmer": "^0.1.4",
-    "wooorm/unist-util-visit": "^1.0.0",
-    "wooorm/nlcst-to-string": "1.0.0"
+    "dunckr/retext-pos": "^1.0.0",
+    "dunckr/stemmer": "^0.1.4",
+    "dunckr/unist-util-visit": "^1.0.0",
+    "dunckr/nlcst-to-string": "1.0.0"
   },
-  "repository": "wooorm/retext-keywords",
+  "repository": "dunckr/retext-overuse",
   "scripts": [
     "index.js"
   ]
