@@ -1,13 +1,14 @@
 {
   "name": "retext-overuse",
   "version": "1.0.1",
-  "description": "Word overuse with Retext",
+  "description": "Check words for overuse with Retext",
   "license": "MIT",
   "keywords": [
     "keyword",
     "phrase",
     "overuse",
     "synoynm",
+    "duplicates",
     "duplication",
     "retext"
   ],
