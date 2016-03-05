@@ -3,7 +3,7 @@
  * @copyright 2016 Duncan Beaton
  * @license MIT
  * @module retext:overuse
- * @fileoverview Check phrases overuse.
+ * @fileoverview Check words for overuse.
  */
 
 'use strict';
@@ -37,11 +37,11 @@ test('retext-overuse', function (t) {
 
       t.deepEqual(
         file.messages.map(String), [
-          '1:16-1:23: Replace “amazing” with “astonishing”, “surprising”, ',
+          '1:16-1:23: Replace “amazing” with “astonishing”, “surprising”, ' +
           '“awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”',
-          '2:16-2:23: Replace “amazing” with “astonishing”, “surprising”, ',
+          '2:16-2:23: Replace “amazing” with “astonishing”, “surprising”, ' +
           '“awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”',
-          '3:15-3:22: Replace “amazing” with “astonishing”, “surprising”, ',
+          '3:15-3:22: Replace “amazing” with “astonishing”, “surprising”, ' +
           '“awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”'
         ],
         'should warn about the use of overused words'
