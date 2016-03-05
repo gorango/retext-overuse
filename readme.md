@@ -15,7 +15,54 @@ AMD, CommonJS, and globals module, [uncompressed and compressed][releases].
 
 ## Usage
 
+```js
+var retext = require('retext');
+var overuse = require('retext-overuse');
+var report = require('vfile-reporter');
+
+retext()
+    .use(overuse)
+    .process([
+		'That movie was amazing',
+		'The acting was amazing',
+		'The story was amazing'
+    ].join('\n'), function (err, file) {
+        console.log(report(file));
+    });
+```
+
+Yields:
+
+```txt
+<stdin>
+	1:16-1:23: Replace “amazing” with “astonishing”, “surprising”, “awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”
+	2:16-2:23: Replace “amazing” with “astonishing”, “surprising”, “awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”
+	3:15-3:22: Replace “amazing” with “astonishing”, “surprising”, “awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”
+
+⚠ 3 warnings
+```
+
 ## API
+
+### `retext.use(overuse[, options])`
+
+Word overuse with Retext.
+
+**Parameters**
+
+*   `overuse` — This plug-in;
+
+*   `options` (`Object?`, optional):
+
+	*	`list` (Object.<Object>)
+	 	- Phrases with suggestions.
+
+	*	`ignore` (Object.<Array>)
+	 	- Phrases in the list to ignore.
+
+	* 	`limit` (Object.<number>)
+	 	- Number of times phrase must have been used.
+
 ## License
 
 [MIT][license] © [Duncan Beaton][author]
