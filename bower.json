@@ -1,15 +1,9 @@
 {
   "name": "retext-overuse",
   "main": "retext-overuse.js",
-  "description": "Keyword extraction with Retext",
+  "description": "",
   "license": "MIT",
   "keywords": [
-    "keyword",
-    "phrase",
-    "terminology",
-    "term",
-    "extraction",
-    "retext"
   ],
   "repository": {
     "type": "git",

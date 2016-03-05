@@ -5,8 +5,8 @@
     "coverage/",
     "node_modules/",
     "build.js",
-    "retext-keywords.js",
-    "retext-keywords.min.js"
+    "retext-overuse.js",
+    "retext-overuse.min.js"
   ],
   "jsDoc": {
     "checkAnnotations": "jsdoc3",

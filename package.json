@@ -1,26 +1,24 @@
 {
   "name": "retext-overuse",
   "version": "1.0.1",
-  "description": "Keyword extraction with Retext",
+  "description": "Word overuse with Retext",
   "license": "MIT",
   "keywords": [
     "keyword",
     "phrase",
-    "terminology",
-    "term",
-    "extraction",
+    "overuse",
+    "synoynm",
+    "duplication",
     "retext"
   ],
   "dependencies": {
     "array-differ": "^1.0.0",
-    "nlcst-normalize": "^1.1.0",
     "nlcst-search": "^1.1.1",
     "nlcst-to-string": "^1.0.0",
     "object-keys": "^1.0.9",
     "quotation": "^1.0.1",
     "stopwords": "0.0.5",
-    "thesaurus": "0.0.0",
-    "unist-util-visit": "^1.0.0"
+    "thesaurus": "0.0.0"
   },
   "files": [
     "index.js"
@@ -52,7 +50,7 @@
     "build-md": "remark . --quiet --frail",
     "build-bundle": "browserify index.js --bare -s retextOveruse > retext-overuse.js",
     "build-mangle": "esmangle retext-overuse.js > retext-overuse.min.js",
-    "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
+    "build": "npm run build-md && npm run build-bundle",
     "lint-api": "eslint .",
     "lint-style": "jscs --reporter inline .",
     "lint": "npm run lint-api && npm run lint-style",
