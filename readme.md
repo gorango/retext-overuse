@@ -54,14 +54,14 @@ Word overuse with Retext.
 
 *   `options` (`Object?`, optional):
 
-	*	`list` (Object.<Object>)
-	 	- Phrases with suggestions.
+    *   `list` (`Object.<Object>`)
+        — Phrases with suggestions.
 
-	*	`ignore` (Object.<Array>)
-	 	- Phrases in the list to ignore.
+    *   `ignore` (`Object.<Array>`)
+        — Phrases in the list to ignore.
 
-	* 	`limit` (Object.<number>)
-	 	- Number of times phrase must have been used.
+    *   `limit` (`Number`)
+        — Number of times phrase must have been used.
 
 ## License
 
