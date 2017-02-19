@@ -100,7 +100,8 @@ function attacher(retext, options) {
 
       message.ruleId = phrase;
       message.source = 'retext-overuse';
-
+      message.actual = value.slice(1, -1);
+      message.expected = suggestions;
     });
 
   }
