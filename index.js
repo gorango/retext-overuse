@@ -32,11 +32,11 @@ var thesaurus = require('thesaurus/lib/th_en_US_new');
  * @return {Object}
  */
 function getDuplicates(node, phrases) {
-  var duplicates = {};
-  search(node, phrases, function (match, position, parent, phrase) {
-    duplicates[phrase] = duplicates[phrase] ? duplicates[phrase] + 1 : 1
-  });
-  return duplicates;
+    var duplicates = {};
+    search(node, phrases, function (match, position, parent, phrase) {
+        duplicates[phrase] = duplicates[phrase] ? duplicates[phrase] + 1 : 1
+    });
+    return duplicates;
 }
 
 /**
@@ -47,13 +47,13 @@ function getDuplicates(node, phrases) {
  * @return {Array.<string>}
  */
 function getOveruse(duplicates, limit) {
-  var duplicate;
-  for (duplicate in duplicates) {
-    if (duplicates[duplicate] < limit) {
-      delete duplicates[duplicate]
+    var duplicate;
+    for (duplicate in duplicates) {
+        if (duplicates[duplicate] < limit) {
+            delete duplicates[duplicate]
+        }
     }
-  }
-  return keys(duplicates);
+    return keys(duplicates);
 }
 
 /**
@@ -69,44 +69,42 @@ function getOveruse(duplicates, limit) {
  * @return {Function} - `transformer`.
  */
 function attacher(retext, options) {
-  var settings = options || {};
-  var ignore = settings.ignore || stopwords;
-  var patterns = settings.list || thesaurus;
-  var limit = settings.limit || 3;
-  var list = keys(patterns);
-  var phrases = difference(list, ignore);
+    var settings = options || {};
+    var ignore = settings.ignore || stopwords;
+    var patterns = settings.list || thesaurus;
+    var limit = settings.limit || 3;
+    var list = keys(patterns);
+    var phrases = difference(list, ignore);
 
-  /**
-   * Search `tree` for overuse.
-   *
-   * @param {Node} tree - NLCST node.
-   * @param {VFile} file - Virtual file.
-   */
-  function transformer(tree, file) {
-    var duplicates = getDuplicates(tree, phrases)
-    var overuse = getOveruse(duplicates, limit)
+    /**
+     * Search `tree` for overuse.
+     *
+     * @param {Node} tree - NLCST node.
+     * @param {VFile} file - Virtual file.
+     */
+    function transformer(tree, file) {
+        var duplicates = getDuplicates(tree, phrases)
+        var overuse = getOveruse(duplicates, limit)
 
-    search(tree, overuse, function (match, position, parent, phrase) {
-      var suggestions = patterns[phrase];
-      var value = quotation(nlcstToString(match), '“', '”');
+        search(tree, overuse, function (match, position, parent, phrase) {
+            var suggestions = patterns[phrase];
+            var value = quotation(nlcstToString(match), '“', '”');
 
-      var reason = 'Replace ' + value + ' with ' +
-        quotation(suggestions, '“', '”').join(', ');
+            var reason = 'Replace ' + value + ' with ' +
+                quotation(suggestions, '“', '”').join(', ');
 
-      var message = file.warn(reason, {
-        'start': match[0].position.start,
-        'end': match[match.length - 1].position.end
-      });
+            var message = file.warn(reason, {
+                'start': match[0].position.start,
+                'end': match[match.length - 1].position.end
+            });
 
-      message.ruleId = phrase;
-      message.source = 'retext-overuse';
-      message.actual = value.slice(1, -1);
-      message.expected = suggestions;
-    });
-
-  }
-
-  return transformer;
+            message.ruleId = phrase;
+            message.source = 'retext-overuse';
+            message.actual = value.slice(1, -1);
+            message.expected = suggestions;
+        });
+    }
+    return transformer;
 }
 
 /*
