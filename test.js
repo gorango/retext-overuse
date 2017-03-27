@@ -37,12 +37,15 @@ test('retext-overuse', function (t) {
 
             t.deepEqual(
                 file.messages.map(String), [
-                    '1:16-1:23: Replace “amazing” with “astonishing”, “surprising”, ' +
-                    '“awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”',
-                    '2:16-2:23: Replace “amazing” with “astonishing”, “surprising”, ' +
-                    '“awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”',
-                    '3:15-3:22: Replace “amazing” with “astonishing”, “surprising”, ' +
-                    '“awe-inspiring”, “awesome”, “awful”, “awing”, “impressive”'
+                    '1:16-1:23: Replace “amazing” with ' +
+                    '“astonishing”, “surprising”, “awe-inspiring”, ' +
+                    '“awesome”, “awful”, “awing”, “impressive”',
+                    '2:16-2:23: Replace “amazing” with ' +
+                    '“astonishing”, “surprising”, “awe-inspiring”, ' +
+                    '“awesome”, “awful”, “awing”, “impressive”',
+                    '3:15-3:22: Replace “amazing” with ' +
+                    '“astonishing”, “surprising”, “awe-inspiring”, ' +
+                    '“awesome”, “awful”, “awing”, “impressive”'
                 ],
                 'should warn about the use of overused words'
             );
