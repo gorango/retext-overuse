@@ -93,7 +93,7 @@ function attacher(retext, options) {
             var reason = 'Replace ' + value + ' with ' +
                 quotation(suggestions, '“', '”').join(', ');
 
-            var message = file.warn(reason, {
+            var message = file.info(reason, {
                 'start': match[0].position.start,
                 'end': match[match.length - 1].position.end
             });
